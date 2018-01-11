@@ -1,0 +1,7 @@
+name: MoneySteal
+version: 0.1
+author: Locked
+main: org.bonilla.moneysteal.MoneySteal
+commands:
+  test:
+    description: A simple hello command

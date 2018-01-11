@@ -1,0 +1,12 @@
+data:
+  # Percentage of money stolen by the attacker from the victim.
+  percentage: 1.5
+  # Attackers can steal money if the victim has 'X' money.
+  start-from: 1
+  # Enables add (attacker) & substract (victim) messages.
+  use-messages: true
+messages:
+  # Message that receives the attacker.
+  add-money: '&a+ ${MONEY}'
+  # Message that receives the victim.
+  substract-money: '&c- ${MONEY}'
