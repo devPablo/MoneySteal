@@ -10,3 +10,7 @@ messages:
   add-money: '&a+ ${MONEY}'
   # Message that receives the victim.
   substract-money: '&c- ${MONEY}'
+  # Message that displays base command.
+  base-command: '&6[MoneySteal] &cUsage: /moneysteal reload'
+  # Message when plugin has been reloaded properly.
+  successful-reload: '&6[MoneySteal] &7Successfully reloaded!'

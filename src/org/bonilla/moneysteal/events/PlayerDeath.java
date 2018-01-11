@@ -28,12 +28,13 @@ public class PlayerDeath implements Listener{
         FileConfiguration config = plugin.getConfig();
         if(p.getKiller().hasPermission("moneysteal.allow") || p.isOp()) {
             if(eco.getMoneyExact(p.getName()).doubleValue() >= config.getDouble("data.start-from")) {
-                moneyStolen = (Double.valueOf(plugin.getConfig().getDouble("data.percentage")) * eco.getMoneyExact(p.getName()).doubleValue()) / 100;
+                moneyStolen = ((Double.valueOf(plugin.getConfig().getDouble("data.percentage")) * eco.getMoneyExact(p.getName()).doubleValue()) / 100);
                 eco.substract(p.getName(), new BigDecimal(moneyStolen));
                 eco.add(p.getKiller().getName(), new BigDecimal(moneyStolen));
                 if (config.getBoolean("data.use-messages")) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.substract-money").replace("{MONEY}", String.valueOf(moneyStolen))));
-                    p.getKiller().sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.add-money").replace("{MONEY}", String.valueOf(moneyStolen))));
+                    String moneyStolenRounded = String.format("%.2f", moneyStolen);
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.substract-money").replace("{MONEY}", moneyStolenRounded)));
+                    p.getKiller().sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.add-money").replace("{MONEY}", moneyStolenRounded)));
                 }
             }
         }
