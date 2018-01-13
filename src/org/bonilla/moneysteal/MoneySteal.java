@@ -33,7 +33,6 @@ public class MoneySteal extends JavaPlugin {
     private void registerEvent() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new PlayerDeath(this), this);
-        saveConfig();
     }
 
     private void registerCommand() {
